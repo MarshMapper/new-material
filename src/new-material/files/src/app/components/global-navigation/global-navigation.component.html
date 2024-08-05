@@ -1,0 +1,22 @@
+<div class="navigation-container">
+    <mat-toolbar color="primary" class="main-toolbar">
+        <span class="main-toolbar-left">
+            <img src="assets/images/marsh-map-circle-200.png" alt="NJ, Naturally logo" class="main-logo" />
+            <span class="title-text">NJ, Naturally</span>
+            <a routerLink="/albums" type="button" color="primary" aria-label="Photo albums button" mat-flat-button>
+                Photos</a>
+        </span>
+        <span>
+            <a routerLink="/about" type="button" aria-label="About button" mat-icon-button>
+                <mat-icon aria-hidden="false" aria-label="info icon">info</mat-icon></a>
+            <a routerLink="/help" type="button" aria-label="Help button" mat-icon-button>
+                <mat-icon aria-hidden="false" aria-label="help icon">help</mat-icon></a>
+        </span>
+        @if(showProgressBar$ | async) {
+            <mat-progress-bar #loadingIndicator class="progress-bar" mode="indeterminate" color="primary"></mat-progress-bar>
+        }
+    </mat-toolbar>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "new-material",
+  "version": "0.0.0",
+  "description": "A blank schematics",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch",
+    "test": "npm run build && jasmine src/**/*_spec.js"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^17.3.8",
+    "@angular-devkit/schematics": "^17.3.8",
+    "@angular/cdk": "^18.1.3",
+    "@angular/cli": "^17.3.8",
+    "@angular/material": "17.3.10",
+    "typescript": "~5.4.2"
+  },
+  "devDependencies": {
+    "@types/jasmine": "~5.1.0",
+    "@types/node": "^18.18.0",
+    "jasmine": "^5.0.0"
+  }
+}
