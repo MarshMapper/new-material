@@ -7,7 +7,7 @@ The schematic is intended to be used right after creating a new Angular project 
 CDK, as well as creating a top-level layout for the application using CSS Grid Layout.  Help and Info pages are 
 included, as well as a default page you specify when you run the schematic.
 
-**Important:** This schematic will currently overwrites any existing files with the same name as files it generates.
+**Important:** This schematic will overwrite any existing files with the same name as files it generates.
 
 ## Using
 
