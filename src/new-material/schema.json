@@ -4,11 +4,16 @@
     "title": "Project Setup Options",
     "type": "object",
     "properties": {
+      "projectName": {
+        "type": "string",
+        "description": "The name of the project to update",
+        "x-prompt": "What is the name of the project to update (e.g. 'my-project')?"
+      },
       "defaultPageName": {
         "type": "string",
         "description": "The name of the default / primary page in the UI",
         "x-prompt": "What is the name of the default page in the UI?"
       }
     },
-    "required": ["defaultPageName"]
+    "required": ["defaultPageName", "projectName"]
   }
