@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { HelpComponent } from './components/help/help.component';
+import { <%= classify(defaultPageName) %>Component } from './components/<%= dasherize(defaultPageName.toLowerCase()) %>/<%= dasherize(defaultPageName.toLowerCase()) %>.component';
 
 export const routes: Routes = [
-/*    {
-        path: 'albums',
-        component: PhotoAlbumsComponent,
-        title: 'Photo Albums'
-    }, */
+    {
+        path: '<%= dasherize(defaultPageName.toLowerCase()) %>',
+        component: <%= classify(defaultPageName) %>Component,
+        title: '<%= defaultPageName %>'
+    },
     {
         path: 'about',
         component: AboutComponent,
@@ -20,7 +21,7 @@ export const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: 'help',
+        redirectTo: '<%= dasherize(defaultPageName.toLowerCase()) %>',
         pathMatch: 'full'
     }
 ];
