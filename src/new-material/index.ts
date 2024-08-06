@@ -1,5 +1,5 @@
-import { apply, chain, externalSchematic, MergeStrategy, mergeWith, move, Rule, SchematicContext, strings, template, Tree, url } from '@angular-devkit/schematics';
-
+import { apply, chain, MergeStrategy, mergeWith, move, Rule, SchematicContext, strings, template, Tree, url } from '@angular-devkit/schematics';
+import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
 type Options = {
   // these depend on the input parameters of the schematic
   projectName: string;
@@ -7,8 +7,11 @@ type Options = {
 };
 // the factory function that creates the rule for the new-material schematic
 export function newMaterial(_options: Options): Rule {
-  return (_tree: Tree, _context: SchematicContext) => {
-    console.log(`Options are ${JSON.stringify(_options)}`);
+  return (_: Tree, context: SchematicContext) => {
+    // run npm install for @angular/material @angular/cdk @angular/animations
+    let taskId = context.addTask(new NodePackageInstallTask({ packageName: '@angular/material@^17.3.0' }));
+    taskId = context.addTask(new NodePackageInstallTask({ packageName: '@angular/cdk@^17.3.0' }), [taskId]);
+    context.addTask(new NodePackageInstallTask({ packageName: '@angular/animations@^17.3.0' }), [taskId]);
 
     const templateSource = apply(
       url('./files'), [
@@ -19,19 +22,8 @@ export function newMaterial(_options: Options): Rule {
       move('.'),
     ],
     );
-    // run the external schematic to add Angular Material to the project, then merge with the files
-    // from this schematic.  
-    //
-    // there is currently an issue with this code because the files from ths echmatic are being merged
-    // into the project before the Angular Material schematic has finished running.  This means that
-    // any files it updates may be incorrect.  currently the only known issue is with styles.scss
     return chain([
-      externalSchematic('@angular/material', 'ng-add', {
-      theme: 'custom',
-      typography: true,
-      animations: 'y'
-    }),
-    mergeWith(templateSource, MergeStrategy.Overwrite)
+      mergeWith(templateSource, MergeStrategy.Overwrite)
     ]);
   }
 }
