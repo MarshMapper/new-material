@@ -10,7 +10,8 @@ CDK, as well as creating a top-level layout for the application using CSS Grid L
 
 ## Using
 
-For local development, clone this repo and run "npm run build" in the top-level folder. Then, in the project where you want to use the schematic, run:
+For local development, clone this repo and run "yarn install" and "npm run build" in the top-level folder. Then, in the project 
+where you want to use the schematic, run:
 
     ng g path/to/new-material:new-material
 
