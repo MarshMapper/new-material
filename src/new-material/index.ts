@@ -9,18 +9,14 @@ type Options = {
 export function newMaterial(_options: Options): Rule {
   return (_tree: Tree, _context: SchematicContext) => {
     console.log(`Options are ${JSON.stringify(_options)}`);
-    const templateOptions = {
-      name: '',
-      path: '.'
-    };
+
     const templateSource = apply(
       url('./files'), [
       template({
         ...strings,
-        ..._options,
-        ...templateOptions,
+        ..._options
       }),
-      move(templateOptions.path),
+      move('.'),
     ],
     );
     // run the external schematic to add Angular Material to the project, then merge with the files
@@ -29,7 +25,8 @@ export function newMaterial(_options: Options): Rule {
     // there is currently an issue with this code because the files from ths echmatic are being merged
     // into the project before the Angular Material schematic has finished running.  This means that
     // any files it updates may be incorrect.  currently the only known issue is with styles.scss
-    return chain([externalSchematic('@angular/material', 'ng-add', {
+    return chain([
+      externalSchematic('@angular/material', 'ng-add', {
       theme: 'custom',
       typography: true,
       animations: 'y'

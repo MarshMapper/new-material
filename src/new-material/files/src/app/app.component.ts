@@ -9,5 +9,5 @@ import { GlobalNavigationComponent } from './components/global-navigation/global
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'rest-img-client';
+  title = '<%= projectName %>';
 }
