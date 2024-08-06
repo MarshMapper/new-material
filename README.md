@@ -1,27 +1,18 @@
 # new-material
 
-NewMaterial is an Angular schematic that generates a new Angular Material application with several standard components
+new-material is an Angular schematic that generates a new Angular Material application with several standard components
 and a "progress" service that can be shared by all components to show when the application is busy.
 
 The schematic is intended to be used right after creating a new Angular project to add Angular Material and the
-CDK, as well as creating a top-level layout for the application using CSS Grid Layout.
+CDK, as well as creating a top-level layout for the application using CSS Grid Layout.  Help and Info pages are 
+included, as well as a default page you specify when you run the schematic.
 
 **Important:** This schematic will currently overwrites any existing files with the same name as files it generates.
 
 ## Using
 
-For local development, clone this repo and run "yarn install" and "npm run build" in the top-level folder. Then, in the project 
-where you want to use the schematic, run:
+For local development, clone this repo and run "yarn install" and "npm run build" in the top-level folder. Then, in the project where you want to use the schematic, run:
 
     ng g path/to/new-material:new-material
 
-where "path/to" is the path to the folder where you cloned and built this repo.
-
-Currently there is an issue with the generated code.  The global styles.scss is a merger of the default one and the one
-provided in this template.  Delete everything before the line around line 41 that says:
-    
-    @use '@angular/material' as mat;
-
-This issue will be corrected in a future version.   Similarly, the default landing page generated does not currently work and will be fixed in a future version.  
-
-More paramters will be added to remove some hard coded values and to allow for more customization.
+where "path/to/new-material" is the path to the folder where you cloned and built this repo.
