@@ -28,3 +28,16 @@ The following is a complete example of building the schematic and creating a new
     c:\src\my-new-app> ng serve -o
 
 Note that the files added by the schematic rely on the use of SCSS for styling, so the Angular application must be created with SCSS as the style format as shown above.  
+
+Sample application and "fav" icons are included in the "src/assets" folder.  Those can be replace with icons approproate for the generated application.
+
+For those icons to be included in the build, src/favicon.ico and src/assets must be added to the "assets" section of the "angular.json" file for the generated application:
+
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              "src/favicon.ico",
+              "src/assets"
+            ],
