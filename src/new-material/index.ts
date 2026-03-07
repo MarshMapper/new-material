@@ -9,7 +9,7 @@ type Options = {
 export function newMaterial(_options: Options): Rule {
   return (_: Tree, context: SchematicContext) => {
     // run npm install for @angular/material @angular/cdk @angular/animations
-    context.addTask(new NodePackageInstallTask({ packageName: '@angular/material@~17.3.0 @angular/cdk@~17.3.0 @angular/animations@~17.3.0' }));
+    context.addTask(new NodePackageInstallTask({ packageName: '@angular/material@~21.0.0 @angular/cdk@~21.0.0 @angular/animations@~21.0.0' }));
 
     const templateSource = apply(
       url('./files'), [
