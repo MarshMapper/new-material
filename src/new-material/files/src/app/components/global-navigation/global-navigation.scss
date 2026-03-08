@@ -16,6 +16,15 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    background-color: var(--mat-sys-primary);
+    color: var(--mat-sys-on-primary);
+    a, .mat-icon {
+        color: var(--mat-sys-on-primary);
+    }
+}
+
+.main-toolbar a[mat-button]:hover {
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .main-toolbar-left {

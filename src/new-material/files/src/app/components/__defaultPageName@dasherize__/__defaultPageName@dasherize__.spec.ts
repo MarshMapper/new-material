@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { <%= classify(defaultPageName) %>Component } from './<%= dasherize(defaultPageName.toLowerCase()) %>.component';
+import { <%= classify(defaultPageName) %>Component } from './<%= dasherize(defaultPageName.toLowerCase()) %>';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('<%= classify(defaultPageName) %>Component', () => {

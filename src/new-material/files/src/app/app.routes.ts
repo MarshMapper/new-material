@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { AboutComponent } from './components/about/about.component';
-import { HelpComponent } from './components/help/help.component';
-import { <%= classify(defaultPageName) %>Component } from './components/<%= dasherize(defaultPageName.toLowerCase()) %>/<%= dasherize(defaultPageName.toLowerCase()) %>.component';
+import { AboutComponent } from './components/about/about';
+import { HelpComponent } from './components/help/help';
+import { <%= classify(defaultPageName) %>Component } from './components/<%= dasherize(defaultPageName.toLowerCase()) %>/<%= dasherize(defaultPageName.toLowerCase()) %>';
 
 export const routes: Routes = [
     {

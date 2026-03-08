@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GlobalNavigationComponent } from './global-navigation.component';
+import { GlobalNavigationComponent } from './global-navigation';
 import { RouterModule } from '@angular/router';
 
 describe('GlobalNavigationComponent', () => {

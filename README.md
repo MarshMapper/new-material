@@ -22,7 +22,7 @@ The following is a complete example of building the schematic and creating a new
     c:\src\new-material> yarn install
     c:\src\new-material> npm run build
     c:\src\new-material> cd ..
-    c:\src> ng new my-new-app --style=scss --ssr=false --routing=true
+    c:\src> ng new my-new-app --style=scss --ssr=false
     c:\src> cd my-new-app
     c:\src\my-new-app> ng g \src\new-material:new-material
     c:\src\my-new-app> ng serve -o
