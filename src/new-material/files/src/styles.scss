@@ -1,31 +1,21 @@
-
-// Custom Theming for Angular Material (M3)
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+@use './custom-palettes' as palettes;
 
-// Define the M3 theme. Angular Material 19+ uses Material Design 3 (M3) by default.
-// The primary palette uses mat.$azure-palette (a medium blue). Change to any of the
-// predefined M3 palettes (mat.$blue-palette, mat.$violet-palette, mat.$green-palette, etc.)
-// or swap the theme-type to 'dark' for a dark theme.
-// See custom-palettes.scss for guidance on further customization.
-$<%= projectName %>-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-    tertiary: mat.$amber-palette,
-  ),
-  typography: (
-    brand-family: '"Noto Sans"',
-    plain-family: '"Noto Sans"',
-  ),
-  density: (
-    scale: 0
-  )
-));
-
-// Apply the theme to the html element. M3 uses CSS custom properties scoped to html.
 html {
-  @include mat.all-component-themes($<%= projectName %>-theme);
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: palettes.$primary,
+      tertiary: palettes.$tertiary,
+    ),
+    typography: (
+      brand-family: '"Noto Sans"',
+      plain-family: '"Noto Sans"',
+    ),
+    density: (
+      scale: 0
+    )
+  ));
 }
 
 html, body { height: 100%; }

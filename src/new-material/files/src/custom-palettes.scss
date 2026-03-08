@@ -1,25 +1,12 @@
-// Angular Material M3 Palette Customization
-//
-// Angular Material 19+ uses Material Design 3 (M3). Themes are defined via
-// mat.define-theme() in styles.scss using predefined tonal palettes.
-//
-// Available built-in M3 palettes:
-//   mat.$red-palette       mat.$green-palette     mat.$blue-palette
-//   mat.$azure-palette     mat.$cyan-palette       mat.$violet-palette
-//   mat.$rose-palette      mat.$magenta-palette    mat.$orange-palette
-//   mat.$chartreuse-palette mat.$yellow-palette    mat.$amber-palette
-//   mat.$spring-green-palette
-//
-// In styles.scss, update the primary / tertiary palette values to change the theme colors:
-//
-//   $my-theme: mat.define-theme((
-//     color: (
-//       theme-type: light,           // 'light' or 'dark'
-//       primary: mat.$azure-palette, // replace with any palette above
-//       tertiary: mat.$amber-palette,
-//     ),
-//     ...
-//   ));
-//
-// For a fully custom M3 palette, use the Material Theme Builder to generate a
-// tonal palette SCSS file: https://material-foundation.github.io/material-theme-builder/
+@use '@angular/material' as mat;
+
+// Primary palette — controls the main brand color.
+// Swap to any built-in M3 palette to retheme the application:
+//   mat.$red-palette        mat.$green-palette      mat.$blue-palette
+//   mat.$azure-palette      mat.$cyan-palette       mat.$violet-palette
+//   mat.$rose-palette       mat.$magenta-palette    mat.$orange-palette
+//   mat.$chartreuse-palette mat.$yellow-palette     mat.$spring-green-palette
+$primary: mat.$azure-palette;
+
+// Tertiary palette — used for accent and highlight colors.
+$tertiary: mat.$yellow-palette;
